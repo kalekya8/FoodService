@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+   <style>
+    
+   </style>
+</head>
+<body>
+    <div class="title">
+        <div class="text1">
+            <p>Panda Express</p>
+        </div>
+            <div class="text2">
+                <p>Sign Up</p>
+            <p>Settings</p>
+            <p>Cart</p>
+            </div>
+    </div>
+    <div class="searchbox">
+        
+    
+
+    </div>
+    
+    <br> <br>
+    <ul class="images">
+        <li *ngFor="let food of foods">
+            <img  src="{{food.ImageUrl}}">
+        </li>
+    </ul>
+    <!-- <div>
+        <input type="text" [(ngModel)]="term">
+        <div *ngFor = "let item of items |filter:term" >
+          <p>
+            {{item.name}}
+          </p>
+        </div>
+ 
+    </div>  -->
+    
+
+</body>
