@@ -9,19 +9,23 @@ import { Foods } from '../shared/model/food';
 })
 export class HomepageComponent {
   foods:Foods[]=[];
-  term:any;
   selectedValue: any;
   filteredValues: any[] = [];
+  term: string = ''; 
 
-
-  search(event: any) {
-    // Simulate fetching suggestions from a server or local data
-    this.filteredValues = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'];
-  }
   constructor(private ass: FoodService){ }
 
   ngOnInit():void{
     this.foods= this.ass.getAll();
   
+}
+
+search(): void {
+  // Use the filter method to filter food items based on the term
+  if (this.term) {
+    this.filteredValues = this.foods.filter(food => food.name.toLowerCase().includes(this.term.toLowerCase()));
+  } else {
+    this.filteredValues = []; // Clear the filtered list if the search term is empty
+  }
 }
 }

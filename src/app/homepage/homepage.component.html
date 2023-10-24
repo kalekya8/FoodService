@@ -15,16 +15,30 @@
             <p>Cart</p>
             </div>
     </div>
-    <div class="searchbox">
+    <!-- <div class="searchbox">
         
-     <a>Search bar to be implemented</a>
+    <input type="text" [(ngModel)]="term" (input)="search()">
 
+       
     </div>
-    
+    <select class="search-dropdown">
+        <option *ngFor="let food of filteredValues" value="{{food.name}}">{{food.name}}</option>
+    </select> -->
+    <div class="searchbox">
+        <input type="text" [(ngModel)]="term" (input)="search()" id="searchInput">
+        <div class="search-results" id="searchResults">
+            <!-- Display search results here -->
+            <p *ngFor="let food of filteredValues">
+                <label>{{food.name}}</label>
+            </p>
+        </div>
+    </div>
     <br> <br>
     <ul class="images">
         <li *ngFor="let food of foods">
             <img  src="{{food.ImageUrl}}">
+            <label>{{food.name}}</label>
+
         </li>
     </ul>
     <!-- <div>
