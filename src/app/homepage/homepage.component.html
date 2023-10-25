@@ -15,15 +15,7 @@
             <p>Cart</p>
             </div>
     </div>
-    <!-- <div class="searchbox">
-        
-    <input type="text" [(ngModel)]="term" (input)="search()">
-
-       
-    </div>
-    <select class="search-dropdown">
-        <option *ngFor="let food of filteredValues" value="{{food.name}}">{{food.name}}</option>
-    </select> -->
+   
     <div class="searchbox">
         <input type="text" [(ngModel)]="term" (input)="search()" id="searchInput">
         <div class="search-results" id="searchResults">
@@ -37,19 +29,15 @@
     <ul class="images">
         <li *ngFor="let food of foods">
             <img  src="{{food.ImageUrl}}">
+            <label>{{food.id}}</label>
             <label>{{food.name}}</label>
-            <label>{{ food.cooktime}}</label>
+           
+            <label>{{ food.price}}</label>
+            <label>{{ food.rating}}</label>
+            <label>{{ food. deliverytime}}</label>
         </li>
     </ul>
-    <!-- <div>
-        <input type="text" [(ngModel)]="term">
-        <div *ngFor = "let item of items |filter:term" >
-          <p>
-            {{item.name}}
-          </p>
-        </div>
- 
-    </div>  -->
+  
     
 
 </body>
