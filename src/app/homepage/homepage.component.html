@@ -28,13 +28,16 @@
     <br> <br>
     <ul class="images">
         <li *ngFor="let food of foods">
-            <img  src="{{food.ImageUrl}}">
+            <div>
+                <img  src="{{food.ImageUrl}}">
             <label>{{food.id}}</label>
             <label>{{food.name}}</label>
-           
             <label>{{ food.price}}</label>
             <label>{{ food.rating}}</label>
             <label>{{ food. deliverytime}}</label>
+            
+            </div>
+            
         </li>
     </ul>
   
